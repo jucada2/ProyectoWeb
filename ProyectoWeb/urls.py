@@ -21,18 +21,23 @@ from AppPeliculas.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path("series/", ver_serie),
+    path("", inicio, name="Inicio"),
 
-    path("", inicio),
+    #URLs de los modelos creados
+    path("series/", ver_serie, name="Series"),
+    path("pelis/", ver_pelis, name="Peliculas"),
+    path("futbol/", ver_partidos, name="Partidos de Futbol"),
 
+    #URLs para crear nuevos datos
+    path("nuevaSerie/", agregar_serie),
+    path("nuevaPeli/", agregar_pelicula),
 
-
-
-
-
-
-
-    #path("nuevaSerie/", agregar_serie),
+    #URLs para buscar datos
+    path("buscarSerieAño/", busqueda_serie_por_año),
+    path("resultadosSerie/", resultados_buscar_serie_año),
+    
     #path("nuevaPeli/", agregar_pelicula),
+
+
 
 ]
